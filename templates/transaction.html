@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block  historyactive %}active{% endblock historyactive %}
+
+{% block title %}Transaction{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card shadow p-4 my-5 bg-body rounded" style="overflow: auto;">
+        <h4>Transaction History</h4>
+        <hr>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Sender's Name</th>
+                    <th>Account Number</th>
+                    <th>Current Balance</th>
+                    <th>Transfer Amount</th>
+                    <th>Receiver's Name</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for detail in details %}
+                <tr>
+                    <td>{{detail.source_name}}</td>
+                    <td>{{detail.source_acc_no}}</td>
+                    <td>&#8377 {{detail.current_balance}}</td>
+                    <td>&#8377 {{detail.money_transfer}}</td>
+                    <td>{{detail.destination_name}}</td>
+                    <td>{{detail.date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

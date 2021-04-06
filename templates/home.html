@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block homeactive %}active{% endblock homeactive %}
+
+{% block title %}JDFC{% endblock title %}
+
+{% block body %}
+
+<div class="jumbotron my-0 p-5">
+    <h1 class="display-4">Welcome to JDFC Bank !</h1>
+    <p class="lead">JDFC is not just a bank it's a lifetime Friend.</p>
+    <hr class="my-4" />
+    <p>
+        JDFC Bank, India's leading private sector bank, offers Online NetBanking
+        Services Personal Banking Services like Accounts Deposits, Cards, Loans etc.
+        Beginning with one office in Mumbai, with a paid-up capital of &#8377 50 lakh and 50 employees, the
+        Bank has made a rapid growth over the years.
+        In business volume, the Bank occupies a premier position among the nationalised banks.
+    </p>
+    <a class="btn btn-danger btn" href="{% url 'customer' %}" role="button">Customers</a>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">From Managing director</h3>
+            <div class="blog-post">
+                <p>
+                    When we came here, we had foreign banks and nationalised banks. Foreign banks had products and services, nationalised banks had brand and money — and we said we willbring both together. That still remains but going forward we have to put these into segments. I like this quote by David Ogilvy, the father of advertising, “The customer is not a moron. She is your wife.” You have to understand customer needs, meet them and keep on adjusting.
+                </p>
+            </div>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">JDFC Bank</h4>
+                <p class="mb-1 text-monospace"><strong>Stock Price- </strong>₹1,442.00 +7.60 (+0.52%)</p>                
+                <p class="mb-1 text-monospace"><strong>CEO- </strong>Abhishek Kumar</p>                
+                <p class="mb-1 text-monospace"><strong>Headquarter- </strong>Mumbai</p>                
+                <p class="mb-1 text-monospace"><strong>Revenue- </strong>1.47 lakh crores INR (US$21 billion, 2020)</p>
+            </div>
+        </aside>
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,1 @@
+web: gunicorn jdfc.wsgi --log-file -

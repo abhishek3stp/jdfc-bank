@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Transfer{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card shadow p-4 my-5 bg-body rounded">
+        <h4>{{sender.name}}</h4>
+        <hr>
+        <p>Email - {{sender.email}}</p>
+        <p>Account No - {{sender.account_no}}</p>
+        <p>IFSC Code - {{sender.ifsc_code}}</p>
+
+        <form method="POST" action="/transaction">
+            {% csrf_token %}
+            <div class="row mb-3 ">
+                <div class="col-md-6">
+                    <label for="transfer_to" class="form-label">Transfer To- </label>
+                    <select id="transfer_to" class="form-control" name="transfer_to">
+                        {% for detail in details %}
+                        <option>{{detail.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="amount" name="amount">
+                </div>
+            </div>
+            <button type="submit" name="submit" value="{{sender.account_no}}" class="btn btn-primary">Transfer</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

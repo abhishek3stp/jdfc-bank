@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block customeractive %}active{% endblock customeractive %}
+
+{% block title %}Customers{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card shadow p-4 my-5 bg-body rounded" style="overflow: auto;">
+        <h4>Customer</h4>
+        <hr>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    <th>Transfer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{customer.account_no}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>&#8377 {{customer.amount}}</td>
+                    <td>
+                        <a href="{% url 'form' customer.account_no %}"
+                            class="btn btn-sm btn-primary active">Transfer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
