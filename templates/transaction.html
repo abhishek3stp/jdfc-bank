@@ -14,10 +14,10 @@
             <thead>
                 <tr>
                     <th>Sender's Name</th>
-                    <th>Account Number</th>
-                    <th>Current Balance</th>
-                    <th>Transfer Amount</th>
+                    <th>Sender's Acc no.</th>
+                    <th>Amount</th>
                     <th>Receiver's Name</th>
+                    <th>Receiver's Acc no.</th>
                     <th>Time</th>
                 </tr>
             </thead>
@@ -26,9 +26,9 @@
                 <tr>
                     <td>{{detail.source_name}}</td>
                     <td>{{detail.source_acc_no}}</td>
-                    <td>&#8377 {{detail.current_balance}}</td>
                     <td>&#8377 {{detail.money_transfer}}</td>
                     <td>{{detail.destination_name}}</td>
+                    <td>{{detail.destination_acc_no}}</td>
                     <td>{{detail.date}}</td>
                 </tr>
                 {% endfor %}

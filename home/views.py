@@ -38,9 +38,9 @@ def transaction(request):
             trans = Transaction()
             trans.source_name = sender.name
             trans.source_acc_no = sender.account_no
-            trans.current_balance = sender.amount
             trans.money_transfer = int(money)
             trans.destination_name = receiver.name
+            trans.destination_acc_no = receiver.account_no
             trans.save()
             messages.success(request, 'Your money is successfully transfered.')
         else:

@@ -26,9 +26,9 @@ class Customer(models.Model):
 class Transaction(models.Model):
     source_name = models.CharField(max_length=122)
     source_acc_no = models.CharField(max_length=122)
-    current_balance = models.IntegerField()
     money_transfer = models.IntegerField()
     destination_name = models.CharField(max_length=122)
+    destination_acc_no = models.CharField(max_length=122)
     date = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

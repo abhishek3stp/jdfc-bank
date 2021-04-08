@@ -17,7 +17,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Balance</th>
-                    <th>Transfer</th>
+                    <th>View</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +29,7 @@
                     <td>&#8377 {{customer.amount}}</td>
                     <td>
                         <a href="{% url 'form' customer.account_no %}"
-                            class="btn btn-sm btn-primary active">Transfer</a>
+                            class="btn btn-sm btn-primary active">View</a>
                     </td>
                 </tr>
                 {% endfor %}
