@@ -7,6 +7,8 @@ from django.contrib import messages
 def home(request):
     return render(request, 'home.html')
 
+def donate(request):
+    return render(request, 'donate.html')
 
 def customer(request):
     customers = Customer.objects.all()
